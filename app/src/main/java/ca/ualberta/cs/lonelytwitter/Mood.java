@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2017. TEAM A, CMPUT 301 University of Alberta - All Rights Reserved. You may use, distribute or modify the code under the terms and conditions of Code of Student behavior at University of Alberta
+ * You can find a copy of the license in this project. Otherwise please contact at kazakov@ualberta.ca
+ */
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.Date;
@@ -6,14 +10,27 @@ import java.util.Date;
  * Created by kazakov on 1/19/17.
  */
 
+
+/**
+ * Main class of Mood which sets the default mood as well returns the date
+ */
 public  abstract class Mood {
 
     private Date when;
 
+    /**
+     * Returns default mood
+     * @return
+     */
     String feels() {
         return "no feels";
 
     }
+
+    /**
+     * Returns default date
+     * @return
+     */
 
     Date getDate(){
         return this.when;
@@ -33,6 +50,10 @@ public  abstract class Mood {
         this.when = when;
     }
 
+
+    /**
+     * Returns the date for the Mood
+     */
     public Mood(){
 
         this.when = new Date();

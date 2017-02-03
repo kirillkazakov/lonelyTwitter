@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2017. TEAM A, CMPUT 301 University of Alberta - All Rights Reserved. You may use, distribute or modify the code under the terms and conditions of Code of Student behavior at University of Alberta
+ * You can find a copy of the license in this project. Otherwise please contact at kazakov@ualberta.ca
+ */
 package ca.ualberta.cs.lonelytwitter;
 
 import java.util.ArrayList;
@@ -7,6 +11,12 @@ import java.util.Date;
  * Created by kazakov on 1/19/17.
  */
 
+
+/**
+ * Implements the Tweet by checking if its 140 characters, returning the string Tweet,
+ * returning the date and an array of Moods
+ *
+ */
 public abstract class Tweet implements Tweetable  {
     private Date date;
     private String message;
@@ -16,6 +26,12 @@ public abstract class Tweet implements Tweetable  {
         return message;
     }
 
+    /**
+     * Checks if the tweet is no more than 140 characters and if so
+     * it will throw and exception
+     * @param message
+     * @throws TweetTooLongException
+     */
     public void setMessage(String message) throws TweetTooLongException{
         if (message.length() > 140){
             throw new TweetTooLongException();
@@ -31,6 +47,10 @@ public abstract class Tweet implements Tweetable  {
         this.date = date;
     }
 
+    /**
+     * Returns a date along with the associated Tweet
+     * @param message
+     */
     public Tweet(String message){
         this.message = message;
         this.date = new Date();
@@ -48,6 +68,10 @@ public abstract class Tweet implements Tweetable  {
 
     public abstract Boolean isImportant();
 
+    /**
+     * Will print the date along with the saved tweet from the User input
+     * @return
+     */
     @Override
     public String toString(){
         return date.toString() + " | " + message;
